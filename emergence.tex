@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+%[10pt,technote]{IEEEtran}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[affil-it]{authblk}
+\usepackage{color}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amssymb}
+\usepackage{geometry}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{wrapfig}
+\usepackage{comment}
+\usepackage{mathrsfs}
+\usepackage{upgreek}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{cite}
+\usepackage{wasysym} 
+%\usepackage{subfigure}
+%\usepackage{wraptable}
+
+\geometry{left=2.5cm, right=2.5cm,top=2.5cm,bottom=2.5cm}
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+
+\setcounter{secnumdepth}{0}
+\title{\bf Principle 4 }
+\author{Jiani Gao\\jgao30@binghamton.edu}
+\affil{Department of Economics, Binghamton University}
+\date{\today}
+\pagestyle{fancy}
+\chead{} \lhead{}\rhead{}
+\cfoot{jgao30@binghamton.edu}
+
+\begin{document}
+\maketitle
+\newpage
+%\tableofcontents	
+
+\newpage
+\noindent
+
+\section{To implement Principle 4, we need:}
+\begin{itemize}
+\item[\Rmnum{1}.] 
+ \textbf{\textcolor{red}{Two types of agents}: fisherman and monitor}
+ \item[\Rmnum{2}.]
+\textbf{\textcolor{red}{Emergence rule}}
+\end{itemize}
+ 
+\textit{\textcolor{blue}{Red words are specifically relevant to Principle 4.}}
+\begin{enumerate}
+	
+	\item Fisherman
+	\begin{itemize}
+		\item Fishermen take fish from lake.
+		\item There are 24 hours per day, people go fish in the first 10 hours, and then go home to take rest.
+		\item Fishermen get happiness from taking fishes, and different types of fishes will give them different happiness. Specifically, carp: 1 unit of happiness, salmon: 2 units of happiness, tilapia: 6 units of happiness.
+		\item Cost of fishing: lose 0.1 happiness for every step they move.
+		\item Chance of catching a fish per tick: similar to wolves-sheep model, people wonder around and find preys.
+		\item New people showing up? leaving?: I let people leave if one is unhappy 5 days in a row.People move in if the percentage of happy fishermen is greater than 80\%.
+		\item \textcolor{red}{Each fisherman has a probability to break rules at the start of each day. If one is unhappy, the probablity one breaks rules will increase.}
+		\item \textcolor{red}{Rule breakers catch more fishes than daily quota.}
+		\item \textcolor{red}{Rule breakers who are caught for more than 3 times, they leave. For the first times, they just give away half of their happiness. For the second time, they give away 75\% happiness (graduated sanction).}
+	\end{itemize}
+
+    
+    \item Monitor
+    \begin{itemize}
+    	\item \textcolor{red}{Monitors check fishermen within a certain distance every night.}
+    	\item \textcolor{red}{Monitor is set to be happy, so they will not move out. He take away 50\% happiness from rule breakers.}
+    	\item {\textcolor{red}{If monitor catches zero rule breaker, he will trun into a fisherman.}}
+    \end{itemize}
+
+    \item Emergence
+    \begin{itemize}
+    	\item \textcolor{red}{At the beginning, we have one monitor.}
+    	\item \textcolor{red}{Community decide to increase the number of monitors if one of the two cases below happen:}
+    	\[	\left\{
+    		\begin{array}{cc}
+    		A.&\text{The number of fishes in the lake is less than 50\% of the original lebel}\\
+    		B.&\text{The number of unhappy fishermen is greater than 1/3}	
+    		\end{array}
+    		\right    	\]
+    	\item \textcolor{red}{New monitor is selected randomly from fishermen who are unhappy.}	
+    	\item \textcolor{red}{\textit{System trys to reach the steady state where the above 2 conditions are not violated with the right number of monitors.}}		
+    \end{itemize}
+    
+  
+    \item Fish
+    \begin{itemize}
+    	\item There are 3 fishes: carp, salmon, tilapia,
+    	\item They reproduce at different rates.
+    	\item Different types of fishes have different size and values.
+    \end{itemize}
+
+    
+    \item Environment
+    \begin{itemize}
+    	\item One lake.
+    	\item \textcolor{red}{Link patches outside the lakes with agents, so everybody has a fixed location.}
+    \end{itemize}
+
+
+    \item Programming logic:
+    \begin{itemize}
+    	\item Program physical environment first? \textbf{Done this part.} 
+    	\item Then: the "social" environment of rules? \textbf{In progress.} 
+    \end{itemize}
+  
+    
+     
+\end{enumerate}
+
+	
+
+
+
+
+%\bibliographystyle{unsrt} 
+%\bibliography{}
+\end{document}
